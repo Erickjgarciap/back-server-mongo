@@ -1,0 +1,1 @@
+module.exports.SEED = '@ese-es-un-zip-dificl';
