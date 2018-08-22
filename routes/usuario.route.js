@@ -35,7 +35,7 @@ usuarios.get('/', (req, res, next) => {
 
 });
 /* Agregar usuario*/
-usuarios.post('/', usuarioAuthenticate.verificaatoken, (req, res, next) => {
+usuarios.post('/', /*usuarioAuthenticate.verificaatoken,*/ (req, res, next) => {
     var body = req.body;
 
     var usuario = new Usuario({
