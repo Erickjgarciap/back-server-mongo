@@ -34,6 +34,10 @@ var usuarioSchema = new Schema({
     google: {
         type: Boolean,
         default: false
+    },
+    face: {
+        type: Boolean,
+        default: false
     }
 });
 usuarioSchema.plugin(uniqueValidator, { message: '{PATH} debe ser unico' });
