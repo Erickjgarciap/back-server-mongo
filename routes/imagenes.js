@@ -2,6 +2,7 @@ var express = require('express');
 var imagen = express();
 const path = require('path');
 const fs = require('fs');
+
 imagen.get('/:tipo/:img', (req, res, next) => {
     var tipo = req.params.tipo;
     var img = req.params.img;
