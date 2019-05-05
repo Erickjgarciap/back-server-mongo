@@ -121,4 +121,35 @@ hospital.delete('/:id', hospitalAuthenticate.verificaatoken, (req, res) => {
 
     });
 });
+
+
+/*
+Obtener un hospital por el ID
+ */
+hospital.get('/:id', hospitalAuthenticate.verificaatoken, (req, res) => {
+    var id = req.params.id;
+    Hospitalmodel.findById(id).populate('usuario', 'nombre img email').
+    exec((err, hospital) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                mensaje: 'Error el usuario no existe',
+                errors: err
+            });
+        }
+        if (!hospital) {
+            return res.status(400).json({
+                ok: false,
+                mensaje: 'No existe un hospital con ese id',
+                errors: err
+            });
+        }
+        res.status(200).json({
+            ok: true,
+            hospital: hospital
+        });
+
+    });
+});
+
 module.exports = hospital;
