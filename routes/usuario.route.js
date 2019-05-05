@@ -14,7 +14,7 @@ usuarios.get('/', (req, res, next) => {
     } else {
         desde = Number(0);
     }
-    Usuario.find({}, 'nombre email img role google face').skip(desde).limit(2).exec((err, usuarios) => {
+    Usuario.find({}, 'nombre email img role google face').skip(desde).limit(5).exec((err, usuarios) => {
         if (err) {
             return res.status(500).json({
                 ok: false,
