@@ -77,7 +77,7 @@ function subirportipo(tipo, id, nombre_archivo, res) {
             var pathviejo = './uploads/usuarios/' + usuario.img;
             // si existe elimina la imagen anterior
             if (fs.existsSync(pathviejo)) {
-                fs.unlink(pathviejo);
+                fs.unlinkSync(pathviejo);
             }
             usuario.img = nombre_archivo;
 
@@ -108,7 +108,7 @@ function subirportipo(tipo, id, nombre_archivo, res) {
             var pathviejo = './uploads/medicos/' + medico.img;
             // si existe elimina la imagen anterior
             if (fs.existsSync(pathviejo)) {
-                fs.unlink(pathviejo);
+                fs.unlinkSync(pathviejo);
             }
             medico.img = nombre_archivo;
             medico.save((err, medicoactualizado) => {
@@ -139,7 +139,7 @@ function subirportipo(tipo, id, nombre_archivo, res) {
             var pathviejo = './uploads/hospitales/' + hospital.img;
             // si existe elimina la imagen anterior
             if (fs.existsSync(pathviejo)) {
-                fs.unlink(pathviejo);
+                fs.unlinkSync(pathviejo);
             }
             hospital.img = nombre_archivo;
             hospital.save((err, hospitalactualizado) => {
