@@ -27,7 +27,7 @@ medico.get('/', (req, res, next) => {
             Medicomodel.count({}, (error, conteo) => {
                 res.status(200).json({
                     ok: true,
-                    medicoss: medicos,
+                    medicos: medicos,
                     total: conteo
                 });
             })
